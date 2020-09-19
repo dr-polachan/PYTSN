@@ -18,14 +18,9 @@ python 2.7; Simpy (pip install simpy); numpy; pandas
 
 Step-1: Edit the ned file simulation parameters. Choose the ned file for simulating the appropriate experiment-A configuraiton.
 
-e.g., to simulate experiment-A, configuration-1
+e.g., to simulate experiment-A, configuration-1, set sim_time = 100e-3 and ned_file = "ned_exp_a_conf_1.py"
 
-sim_time = 100e-3
-
-ned_file = "ned_exp_a_conf_1.py"
-
-Step-2: Type the following command,
-$ sudo python run.py
+Step-2: Type the following command, $ sudo python run.py
 
 ### Viewing Resutls
 
@@ -42,12 +37,9 @@ For plotting packet latencies, you may also use the plt_latency.py script in ./t
 ### Running Experiments
 
 Step-1: Edit the ned file simulation parameters. Choose the ned file for simulating the appropriate experiment-B configuraiton.
-e.g., to simulate experiment-B, configuration-ST/BE ration method for CT=50us
-sim_time = 100e-3
-ned_file = "ned_exp_b_stbe_50u.py"
+e.g., to simulate experiment-B, configuration-ST/BE ration method for CT=50us, set sim_time = 100e-3 and ned_file = "ned_exp_b_stbe_50u.py"
 
-Step-2: Type the following command,
-$ sudo python run.py
+Step-2: Type the following command, $ sudo python run.py
 
 ### Viewing Resutls
 
@@ -64,12 +56,9 @@ For plotting packet latencies, you may also use the plt_latency.py script in ./t
 ### Running Experiments
 
 Step-1: Edit the ned file simulation parameters. Choose the ned file for simulating the appropriate experiment-D configuraiton.
-e.g., to simulate experiment-D, configuration-1 
-sim_time = 100e-3
-ned_file = "ned_exp_d_conf_1.py"
+e.g., to simulate experiment-D, configuration-1, set sim_time = 100e-3 and ned_file = "ned_exp_d_conf_1.py"
 
-Step-2: Type the following command,
-$ sudo python run.py
+Step-2: Type the following command, $ sudo python run.py
 
 ### Viewing Resutls
 
