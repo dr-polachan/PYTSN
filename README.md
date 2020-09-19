@@ -20,6 +20,7 @@ $ sudo python run.py
 ### Viewing Resutls
 
 Packets received by the terminals are stored in the file./results/traffic/ts<terminal-id>
+  
 For plotting packet latencies, you may also use the plt_latency.py script in ./tools
   
 ## Exp-B: ST/BE Ratio Method vs. Our Method of Gate Slot Design
@@ -41,6 +42,7 @@ $ sudo python run.py
 ### Viewing Resutls
 
 Packets received by the terminals are stored in the file./results/traffic/ts<terminal-id>
+  
 For plotting packet latencies, you may also use the plt_latency.py script in ./tools
 
 ## Exp-D: Evaluation of Our Decentralized Dynamic Gate Scheduling Algorithm
@@ -62,5 +64,6 @@ $ sudo python run.py
 ### Viewing Resutls
 
 Packets received by the terminals are stored in the file./results/traffic/ts<terminal-id>
+  
 For plotting packet latencies, you may also use the plt_latency.py script in ./tools
 
