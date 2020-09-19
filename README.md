@@ -1,6 +1,13 @@
 # PYTSN-v1.0
 A discrete-event network simulator for TSN
 
+# OS Requirement
+Ubuntu 18.04 or Windows 10 
+
+# Package Requirements
+python 2.7; Simpy (pip install simpy); numpy; pandas
+
+
 ## Exp-A: Demonstration and Validation of PYTSN
 
 ### Network Topology
