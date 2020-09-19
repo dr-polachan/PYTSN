@@ -17,8 +17,11 @@ python 2.7; Simpy (pip install simpy); numpy; pandas
 ### Running Experiments
 
 Step-1: Edit the ned file simulation parameters. Choose the ned file for simulating the appropriate experiment-A configuraiton.
+
 e.g., to simulate experiment-A, configuration-1
+
 sim_time = 100e-3
+
 ned_file = "ned_exp_a_conf_1.py"
 
 Step-2: Type the following command,
