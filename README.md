@@ -26,14 +26,14 @@ For plotting packet latencies, you may also use the plt_latency.py script in ./t
 
 ### Network Topology
 
-<img width="291" alt="fig_exp_eval_setup_pytsn" src="https://user-images.githubusercontent.com/48801729/93668790-9d623780-faac-11ea-9963-8c09e63df7cb.png">
+<img width="382" alt="fig_exp_eval_setup_low_gcl" src="https://user-images.githubusercontent.com/48801729/93668940-e49cf800-faad-11ea-9f62-a37aeacc5ace.png">
 
 ### Running Experiments
 
-Step-1: Edit the ned file simulation parameters. Choose the ned file for simulating the appropriate experiment-A configuraiton.
-e.g., to simulate experiment-A, configuration-1
+Step-1: Edit the ned file simulation parameters. Choose the ned file for simulating the appropriate experiment-B configuraiton.
+e.g., to simulate experiment-B, configuration-ST/BE ration method for CT=50us
 sim_time = 10e-3
-ned_file = "ned_exp_a_conf_1.py"
+ned_file = "ned_exp_b_stbe_50u.py"
 
 Step-2: Type the following command,
 $ sudo python run.py
