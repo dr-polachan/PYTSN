@@ -5,9 +5,9 @@ A discrete-event network simulator for TSN
 Ubuntu 18.04 or Windows 10 
 
 # Package Requirements
-python==2.7, 
-simpy==3.0.13,
-pandas==0.24.2,
+python==2.7
+simpy==3.0.13
+pandas==0.24.2
 matplotlib==2.2.3
 
 
