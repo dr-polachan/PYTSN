@@ -107,6 +107,7 @@ class tcps(object):
                     # wait for the packet to be transmitted out.
                     yield self.env.timeout(pkt.size*8.0/(self.rate*1e6)) 
    
+
     def r_out(self): 
         while True:
             pkt = yield self.S_out.get()

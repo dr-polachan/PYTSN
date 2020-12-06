@@ -207,6 +207,11 @@ class tx(object):
             self.qg_st0.gce.put(gce)
             self.qg_be.gce.put(gce)
             self.var_gce = gce
+
+            #debug-trigger-gce-rcv-event
+            if(len(self.S_pas.items)==0):
+                self.S_pas.put(1)
+
             
     def r_i5(self): 
         while True:
@@ -1147,7 +1152,7 @@ class scl(object):
 class switch(object):
     def __init__(self,env,fwd_tbl,txq_limit=None,pro_delay=0,rate=1000,\
         list_prt_types=["BE","BE","BE","BE"],scl_gp=10e-3,scl_gl_netm=100e-6,scl_gl_tcps=1e-3,\
-        scl_gbnd=1e-6,scl_ns=5):
+        scl_gbnd=1e-6,scl_ns=5,sw_id=None):
 
         self.env = env
 
@@ -1162,6 +1167,7 @@ class switch(object):
         self.scl_ns = scl_ns # Number of TCPS pairs supported
         self.rate = rate
         self.scl_gbnd = scl_gbnd
+        self.sw_id = sw_id
 
         # variables
         self.prtA_type = self.list_prt_types[0]

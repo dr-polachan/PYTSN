@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 ## user settings
-terminal_id = 4 #4
+terminal_id = 10 #4
 src_id = "all"
 CT = 10e-3
 GCL_cycle = 4
