@@ -5,41 +5,41 @@
 ## TCPS
 
 # 3 <-> 7
-tcps_3 = tcps(pytsn,id=3,lan_id=1,dest_id=7,initial_delay=110-3,priority=0,rate=1000,\
+tcps_3 = tcps(pytsn,id=3,lan_id=1,dest_id=7,initial_delay=10e-3,priority=0,rate=1000,\
 	pkt_size=100,burst_count=1250,finish=10,debug=True) #burst_count=10=>10Mbps
 
-tcps_7 = tcps(pytsn,id=7,lan_id=1,dest_id=3,initial_delay=110-3,priority=0,rate=1000,\
+tcps_7 = tcps(pytsn,id=7,lan_id=1,dest_id=3,initial_delay=10e-3,priority=0,rate=1000,\
 	pkt_size=100,burst_count=1250,finish=10,debug=True)
 
 # 8 <-> 5
-tcps_8 = tcps(pytsn,id=8,lan_id=1,dest_id=5,initial_delay=110-3,priority=0,rate=1000,\
+tcps_8 = tcps(pytsn,id=8,lan_id=1,dest_id=5,initial_delay=20e-3,priority=0,rate=1000,\
 	pkt_size=100,burst_count=1250,finish=10,debug=True)
 
-tcps_5 = tcps(pytsn,id=5,lan_id=1,dest_id=8,initial_delay=110-3,priority=0,rate=1000,\
+tcps_5 = tcps(pytsn,id=5,lan_id=1,dest_id=8,initial_delay=20e-3,priority=0,rate=1000,\
 	pkt_size=100,burst_count=1250,finish=10,debug=True)
 
 # 1 <-> 4
-tcps_1 = tcps(pytsn,id=1,lan_id=1,dest_id=4,initial_delay=0e-3,priority=0,rate=1000,\
-	pkt_size=100,burst_count=1,finish=10,debug=True)
+tcps_1 = tcps(pytsn,id=1,lan_id=1,dest_id=4,initial_delay=30e-3,priority=0,rate=1000,\
+	pkt_size=100,burst_count=1250,finish=10,debug=True)
 
-tcps_4 = tcps(pytsn,id=4,lan_id=1,dest_id=1,initial_delay=0e-3,priority=0,rate=1000,\
-	pkt_size=100,burst_count=1,finish=10,debug=True)
+tcps_4 = tcps(pytsn,id=4,lan_id=1,dest_id=1,initial_delay=30e-3,priority=0,rate=1000,\
+	pkt_size=100,burst_count=1250,finish=10,debug=True)
 
 ## BE terminals
-dist_be = poisson(rate_parameter=1e2, size_in_bytes=100)
+dist_be = poisson(rate_parameter=7e5, size_in_bytes=100)
 
 # 2,6,9 -> 10
 be_2 = terminal(pytsn,id=2,lan_id=1,dest_id=10,flow_id= -1,priority=0,\
-	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=110,rate=1000,debug=False)
+	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=0,rate=1000,debug=False)
 
 be_6 = terminal(pytsn,id=6,lan_id=1,dest_id=10,flow_id= -1,priority=0,\
-	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=110,rate=1000,debug=False)
+	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=0,rate=1000,debug=False)
 
 be_9 = terminal(pytsn,id=9,lan_id=1,dest_id=10,flow_id= -1,priority=0,\
-	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=110,rate=1000,debug=False)
+	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=0,rate=1000,debug=False)
 
 be_10 = terminal(pytsn,id=10,lan_id=1,dest_id=10,flow_id= -1,priority=0,\
-	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=110,rate=1000,debug=True)
+	adist=dist_be.adist,sdist=dist_be.sdist,initial_delay=100,rate=1000,debug=True)
 
 ## Switches 
 
@@ -79,7 +79,7 @@ sw_4 = switch_ds(pytsn,sw_4_fwd_tbl,txq_limit=1000,pro_delay=0.5e-6,rate=1000,\
 
 sw_5_fwd_tbl = {1:3, 2:3, 3:3, 4:2, 5:3, 6:3, 7:2, 8:3, 9:3, 10:3}# dst-id:output-port
 sw_5 = switch_ds(pytsn,sw_5_fwd_tbl,txq_limit=1000,pro_delay=0.5e-6,rate=1000,\
-	list_prt_types=["BE","ST","BE","BE"],scl_gp=scl_gp,scl_gl_netm=scl_gl_netm,\
+	list_prt_types=["BE","BE","BE","BE"],scl_gp=scl_gp,scl_gl_netm=scl_gl_netm,\
 	scl_gl_tcps=scl_gl_tcps,scl_gbnd=scl_gbnd,scl_ns=scl_ns,sw_id=5)
 
 sw_6_fwd_tbl = {1:3, 2:3, 3:3, 4:4, 5:3, 6:3, 7:2, 8:3, 9:3, 10:3} # dst-id:output-port
@@ -157,8 +157,8 @@ link_list[17].output = be_6.input
 
 # id:4 to sw-3(p4) [updated]
 tcps_4.output = link_list[18].input
-link_list[18].output = sw_5.p2_in
-sw_5.p2_out = link_list[19].input
+link_list[18].output = sw_7.p4_in
+sw_7.p4_out = link_list[19].input
 link_list[19].output = tcps_4.input
 
 ## Switch-Wiring
@@ -190,13 +190,6 @@ link_list[33].output = sw_5.p3_in
 sw_5.p3_out = link_list[34].input
 link_list[34].output = sw_1.p2_in
 
-'''
-sw_1.p2_out = link_list[33].input
-link_list[33].output = sw_5.p3_in
-sw_3.p3_out = link_list[34].input
-link_list[34].output = sw_1.p2_in
-'''
-'''
 sw_5.p2_out = link_list[35].input
 link_list[35].output = sw_6.p3_in
 sw_6.p3_out = link_list[36].input
@@ -206,4 +199,3 @@ sw_6.p4_out = link_list[37].input
 link_list[37].output = sw_7.p1_in
 sw_7.p1_out = link_list[38].input
 link_list[38].output = sw_6.p4_in
-'''

@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 ## user settings
-terminal_id = 7 #5 #4
-src_id = 3
+terminal_id = 1 #5 #4
+src_id = 4
 plot = False
 
 
