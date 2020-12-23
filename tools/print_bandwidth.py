@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 terminal_id = 10 #4
 src_id = "all"
 CT = 10e-3
-GCL_cycle = 4
+GCL_cycle = 3
 bw_avg_interval = CT
 
 ## close all open plots
