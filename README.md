@@ -53,12 +53,12 @@ For plotting packet latencies, you may also use the plt_latency.py script in ./t
 
 ### Network Topology
 
-<img width="429" alt="fig_exp_decentralized_ds_setup" src="https://user-images.githubusercontent.com/48801729/93668986-347bbf00-faae-11ea-8160-1b3bee63302b.png">
+<img width="288" alt="fig_exp_stbe" src="https://user-images.githubusercontent.com/48801729/102997072-38562c00-454a-11eb-9714-80e919491366.png">
 
 ### Running Experiments
 
 Step-1: Edit the simulation parameters in file "ini". Choose the ned file for simulating the appropriate experiment-A configuraiton.
-e.g., to simulate experiment-D, configuration-1, set sim_time = 100e-3 and ned_file = "ned_exp_d_conf_1.py"
+e.g., to simulate experiment-D, configuration-1, set sim_time = 100e-3 and ned_file = "ned_exp_d_conf_1_rev2.py" and to simulate configuration-2, set ned_file = "ned_exp_d_conf_2_rev2.py"
 
 Step-2: Type the following command, $ sudo python run.py
 
