@@ -19,7 +19,7 @@ Run directory = PYTSN-v2
 
 ### Network Topology
 
-<img width="291" alt="fig_exp_eval_setup_pytsn" src="https://user-images.githubusercontent.com/48801729/93668790-9d623780-faac-11ea-9963-8c09e63df7cb.png">
+![image](https://user-images.githubusercontent.com/48801729/113296718-761bdb00-9317-11eb-9ed2-669b303159fa.png)
 
 ### Running Experiments
 
