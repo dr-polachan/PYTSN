@@ -1,6 +1,8 @@
 # PYTSN-v1.0
 A discrete-event network simulator for TSN
 
+Run directory = PYTSN-v1
+
 # OS Requirement
 Ubuntu 18.04 or Windows 10 
 
