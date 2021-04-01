@@ -1,0 +1,101 @@
+22nd Oct 2020: 
+Currently terminal TCPS transmit slot is fixed to first slot of the first hop switch
+drop_queue in gcl_design is not tested, i.e., what happens when no slots could be found.
+slt_deletion is not tested
+* random_seed is placed in pcl-block
+* randomization is temperority disabled
+
+
+
+16th Oct 2020 : Question, what happen if transmit rate of TCPS (source) is less than the first hop switch ?
+
+
+Updates (1st Sept 2020):
+** Remove seed for random number generation.
+** tsn_switch_ss is redesigned and works fine 
+
+
+
+
+
+
+
+
+
+
+
+
+
+**** add processing delay paramter in rx. Processing delay is moved out from tx
+
+
+Experiments (28-Aug-2020)
+** Modified the tsn_switch "tx" block to remove output bandwidth restriction (this is not required since the rate limitation is now done in the link) and instead we give 1us processing delay at the same place - Switch argument rate is replaced with proc_delay=1us
+** updated the static switch to introduce time_list for the gate control
+
+I: What should be the dead band gap for the GCL when working with be-flows
+
+*** Components available,
+(1) Traffic generator
+(2) Traffic sink
+(3) Network link
+(4) Network switch
+(5) TErminals (Best Effort, TCPS)
+
+** issue/enhancement list
+E - add option to clear results directory (it is easy to do in linux not in windows)
+E - add option for deadband time in GCL
+I - We need to add delay in queue_gate to ensure qlimit in queue gate works, this delay should be the minimmum time taken by the switch to transfer data from queue gate to priority router
+I - timeout and reg_delete is not yet implemented in rx block
+E - Change data packet type from "None" to "data"
+E - Update SCL to support flow deregistraiton
+I - At lower bandwidth tcps packets are missing. check it.(rev-4.6)
+E - If fwd_table of switches are not correct it will generate key error
+
+** log
+* rev-4.6 added support for initial_delay for TCPS
+* rev-4.5 topology (5 switch) seems to be working. Minimal testing done.
+* rev-4.4 extending the topology to two switches (works fine)
+* rev-4.3 SCL is created and tested (works fine). Current SCL doesn't support deregistration of flows.
+* rev-4.2 SCL connections and broadcast system is tested. Need to implement GCL
+* rev-4.1 going to start working on implementing SCL
+* rev-4.0 tsn_switch_ds: basic testing done. (and it works with preset SCL gcl compute function
+* rev-3.93 tsn_switch_ds: implementation of switch with a dummy scl is done (testing is not done)
+* rev-3.92 tsn_switch_ds: Core is created and tested and it works fine
+* rev-3.91 Port component is created by interconnecting tx,pcl and rx. Minimal tests done and it works fine
+* rev-3.9: Port Tx, Port PCL, Port Rx and TCPS terminal are all interconnected and tested (works fine)
+* rev-3.8: Issue fixed with TCPS terminal
+* rev-3.7: PCL is implemented. Basic testing is done and works. Need to check after connecting to Tx
+* rev-3.6: Ongoing (TX) for tsn_switch_ds. Code done. Need to test.
+* rev-3.5: Channel is fixed. Channel now simulates rate, qlimit, latency, jitter and loss
+* rev-3.4: tsn_switch_ds: queue_gate is fixed
+* rev-3.3: tsn_switch_ds: dmux and priority_router is updated and tested
+* rev-3.2: tcps terminal is created (and it works)
+* rev-3.1: best_effort terminal is created (and it works)
+* rev-2.4: results send for review
+* rev-2.3: Added support for TSN-Switch. Ratelimiting is now added to components instead of channel. Rate limiting on traffic generator is yet to be implemented
+* rev-2.2: Added support for TSN-TAS tx block
+
+
+
+(old logs)
+* corrected packet details
+* downgraded the port switch count to 2 for easy-coding.
+* basic switch is coded (and works)
+* switch- a intermediatery input processing function is created
+* A new test-switch is created which can combine components input-port and output-port. Need to use this method to create complex switch.
+* A new two_port_switch is created which consists of two ports connected back to back. Next to do - Create a mux component and make it multiport
+* two_port_switch now supports mux. Works fine. But one Issue to correct- fwd table is given directly in code. it should be given in the .ini file.
+* rev-1.0 : redesigned the rx,tx,mux_dmux and port according to the architecture specified in the visio file
+* rev-1.1 : 4 port switch is created
+* rev-1.1A: fixed the issue without any connection in ned.py but with traffic generator instantiated error is generated
+* rev-1.2 : switch now supports the forwarding table parameter
+* rev-1.3 : component parameters can now be initialized while the components are inititated
+* rev-1.4 : added tool to monitor latency of packets received in the sink component
+* rev-1.5 : corrected the link issue of adding delay
+* rev-1.6 : added support for channel jitter and switch queue limit
+* rev-2: Added support for TSN components - dmux, gcl_generator, queue_gate, and priority_router
+* rev-2.1: Added support for initial delay for traffic generator
+
+
+
