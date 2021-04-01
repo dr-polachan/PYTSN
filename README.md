@@ -1,7 +1,5 @@
-# PYTSN-v1.0
+# PYTSN
 A discrete-event network simulator for TSN
-
-Run directory = PYTSN-v1
 
 # OS Requirement
 Ubuntu 18.04 or Windows 10 
@@ -12,6 +10,15 @@ simpy==3.0.13,
 pandas==0.24.2,
 matplotlib==2.2.3,
 
+# PYTSN-v2.0
+Supports eDDSCH-TSN protocol.
+
+Run directory = PYTSN-v2
+
+# PYTSN-v1.0
+Initial version
+
+Run directory = PYTSN-v1
 
 ## Exp-A: Demonstration and Validation of PYTSN
 
