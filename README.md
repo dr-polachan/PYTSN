@@ -112,4 +112,6 @@ If you are using PYTSN for your work, do cite the following manuscripts,
 
 # Contact Information
 
-If you have questions on how to use the network simulator do contact me at kurianpol@gmail.com
+If you have questions on how to use the network simulator do contact me at kurianpol@gmail.com. 
+  
+my website - https://sites.google.com/view/kurianpolachan/home
