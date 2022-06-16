@@ -101,4 +101,15 @@ Step-3: Type the following command, $ sudo python run.py
 Packets received by the terminals are stored in the file./results/traffic/ts<terminal-id>
   
 For plotting packet latencies, you may also use the plt_latency.py script in ./tools
+  
+### Citation
+  
+If you are using PYTSN for your work, do cite the following manuscripts,
+  
+1. Kurian Polachan, Chandramani Singh, and T. V. Prabhakar. 2021. Decentralized Dynamic Scheduling of TCPS flows and a Simulator for Time-Sensitive Networking. ACM Trans. Internet Technol. Just Accepted (November 2021). https://doi.org/10.1145/3498729
 
+2. K. Polachan, C. Singh and T. V. Prabhakar, "Decentralized Dynamic Gate Scheduling of IEEE 802.1Qbv Time Aware Shaper and a TSN Simulator for Tactile Cyber-Physical Systems," 2021 IFIP/IEEE International Symposium on Integrated Network Management (IM), 2021, pp. 45-53.
+
+### Contact Information
+
+If you have questions on how to use the network simulator do contact me at kurianpol@gmail.com
