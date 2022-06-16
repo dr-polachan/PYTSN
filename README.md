@@ -102,7 +102,7 @@ Packets received by the terminals are stored in the file./results/traffic/ts<ter
   
 For plotting packet latencies, you may also use the plt_latency.py script in ./tools
   
-### Citation
+# Citation
   
 If you are using PYTSN for your work, do cite the following manuscripts,
   
@@ -110,6 +110,6 @@ If you are using PYTSN for your work, do cite the following manuscripts,
 
 2. K. Polachan, C. Singh and T. V. Prabhakar, "Decentralized Dynamic Gate Scheduling of IEEE 802.1Qbv Time Aware Shaper and a TSN Simulator for Tactile Cyber-Physical Systems," 2021 IFIP/IEEE International Symposium on Integrated Network Management (IM), 2021, pp. 45-53.
 
-### Contact Information
+# Contact Information
 
 If you have questions on how to use the network simulator do contact me at kurianpol@gmail.com
